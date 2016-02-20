@@ -4,7 +4,8 @@ admin:
     prefix:   /
 
 site:
-    resource: "@SiteBundle/Controller/"
-    type:     annotation
-    prefix:   /
+    resource: "@SiteBundle/Resources/config/routing.yml"
 
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
