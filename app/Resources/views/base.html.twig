@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Linux{% endblock %}</title>
+        <title>{% block title %}Glass{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
             {% stylesheets 'bundles/site/css/base.css' filter='cssrewrite' %}
@@ -13,18 +13,13 @@
     </head>
     <body id ="body">
         {% block body %}
-            <div id="page-wrap">
-                <header id ="header">
-                    {% block header %}
-                        <a href="{{ path('homepage') }}"><h1>Linux</h1></a>
-                        <span> {% image '@SiteBundle/Resources/public/images/header_linux.png' %}
-                            <img src="{{ asset_url }}" alt="Linux" />
-                            {% endimage %}
-                            <h2 id="h">Присоиденяйтесь к нам!</h2>
-                        </span>
 
-                    {% endblock %}
-                </header>
+            <header id ="header">
+                {% block header %}
+                    <a href="{{ path('homepage') }}"><h1>Glass</h1></a>
+                {% endblock %}
+            </header>
+            <div id="page-wrap">
                 <div id="content">
                     {% block content %}
                     {% endblock %}
@@ -32,26 +27,12 @@
             </div>
             <footer id="footer">
                 {% block footer %}
-
-                    <span> <p> Все права защищены &copy; 2016 by <a href="https://freelancehunt.com/freelancer/scientecs.html#portfolio">Scientecs</a> All rights reserved.</p>
-                        {% image '@SiteBundle/Resources/public/images/footer_linux.png' %}
-                        <img src="{{ asset_url }}" alt="Linux" /> </span>
-                        {% endimage %}
-
-                    <span id="sites">
-                        {% image '@SiteBundle/Resources/public/images/linux-icon.png' %}
-                        <a href="https://www.linux.com/"> <img class="linux" src="{{ asset_url }}" alt="Linux" /> </a>
-                            {% endimage %}
-                            {% image '@SiteBundle/Resources/public/images/linux_mint.png' %}
-                        <a href="http://www.linuxmint.com/"><img class="linux"src="{{ asset_url }}" alt="Linux mint" /> </a>
-                            {% endimage %}
-                            {% image '@SiteBundle/Resources/public/images/ubuntu.ico' %}
-                        <a href="http://www.ubuntu.com/"><img class="linux" src="{{ asset_url }}" alt="Ubuntu" /> </a>
-                            {% endimage %}
-
-                    </span>
-
-                {% endblock%}
+                    <span> 
+                        <p> Все права защищены &copy; 2016 by 
+                            <a href="https://freelancehunt.com/freelancer/scientecs.html#portfolio">Scientecs</a>
+                            All rights reserved.
+                        </p>
+                    {% endblock%}
             </footer>
         {% endblock %}
     </body>
