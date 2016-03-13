@@ -20,6 +20,7 @@ use AdminBundle\Entity\Banks;
 use AdminBundle\Entity\BrokenGlass;
 use AdminBundle\Entity\OrderGlassStatus;
 use AdminBundle\Entity\Company;
+use AdminBundle\Entity\User;
 
 /**
  * OrderGlass
@@ -133,6 +134,12 @@ class OrderGlass
      * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
      */
     protected $company;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="ordersGlass")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
 
     /**
      * Get id
@@ -542,6 +549,30 @@ class OrderGlass
     public function getCompany()
     {
         return $this->company;
+    }
+
+    /**
+     * Set user
+     *
+     * @param User $user
+     *
+     * @return OrderGlass
+     */
+    public function setUser(User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
 }

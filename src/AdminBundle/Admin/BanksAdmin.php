@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Alcogol Entity
+ * Banks Admin
  *
  * PHP version 5.3
  *
@@ -16,12 +16,11 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 /**
- * AlcogolAdmin
+ * BanksAdmin
  */
-class AlcogolAdmin extends BaseAdmin
+class BanksAdmin extends BaseAdmin
 {
 
     /**
@@ -44,13 +43,6 @@ class AlcogolAdmin extends BaseAdmin
                 )
                 ->add('urlImage', 'text', array(
                     'label' => 'Image URL'
-                        )
-                )
-                ->add('alcogolCategories', EntityType::class, array(
-                    'class' => 'AdminBundle:AlcogolCategory',
-                    'property' => 'name',
-                    'label' => 'Категория',
-                    'multiple' => true,
                         )
         );
     }

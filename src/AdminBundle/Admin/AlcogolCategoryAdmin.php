@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Alcogol Entity
+ * AlcogolCategory Entity
  *
  * PHP version 5.3
  *
@@ -19,9 +19,9 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 /**
- * AlcogolAdmin
+ * AlcogolCategoryAdmin
  */
-class AlcogolAdmin extends BaseAdmin
+class AlcogolCategoryAdmin extends BaseAdmin
 {
 
     /**
@@ -31,26 +31,7 @@ class AlcogolAdmin extends BaseAdmin
     {
         $formMapper
                 ->add('name', 'text', array(
-                    'label' => 'Имя'
-                        )
-                )
-                ->add('price', 'number', array(
-                    'label' => 'Цена'
-                        )
-                )
-                ->add('description', 'text', array(
-                    'label' => 'Описание'
-                        )
-                )
-                ->add('urlImage', 'text', array(
-                    'label' => 'Image URL'
-                        )
-                )
-                ->add('alcogolCategories', EntityType::class, array(
-                    'class' => 'AdminBundle:AlcogolCategory',
-                    'property' => 'name',
-                    'label' => 'Категория',
-                    'multiple' => true,
+                    'label' => 'Название'
                         )
         );
     }
@@ -62,7 +43,7 @@ class AlcogolAdmin extends BaseAdmin
     {
         $datagridMapper
                 ->add('name', '', array(
-                    'label' => 'Имя'
+                    'label' => 'Алкоголь'
                         )
         );
     }
@@ -74,15 +55,7 @@ class AlcogolAdmin extends BaseAdmin
     {
         $listMapper
                 ->add('name', 'text', array(
-                    'label' => 'Имя'
-                        )
-                )
-                ->add('price', 'number', array(
-                    'label' => 'Цена'
-                        )
-                )
-                ->add('description', 'text', array(
-                    'label' => 'Описание'
+                    'label' => 'Название'
                         )
                 )
                 ->add('_action', 'actions', array(
@@ -90,7 +63,7 @@ class AlcogolAdmin extends BaseAdmin
                         'edit' => array(),
                         'delete' => array()
                     ),
-                    'label' => 'Действия'
+                    'label' => 'Дейсвтия'
                         )
         );
     }

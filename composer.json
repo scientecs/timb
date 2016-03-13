@@ -28,7 +28,8 @@
         "friendsofsymfony/user-bundle": "~2.0@dev"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "~2.7"
+        "symfony/phpunit-bridge": "~2.7",
+        "doctrine/doctrine-fixtures-bundle": "^2.3"
     },
     "scripts": {
         "post-install-cmd": [

@@ -4,3 +4,56 @@ services:
         arguments: [~, AdminBundle\Entity\Alcogol, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Алкоголь }
+
+    admin.banks:
+        class: AdminBundle\Admin\BanksAdmin
+        arguments: [~, AdminBundle\Entity\Banks, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Банки }
+    admin.broken_glass:
+        class: AdminBundle\Admin\BrokenGlassAdmin
+        arguments: [~, AdminBundle\Entity\BrokenGlass, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Битое стекло }
+
+    admin.articles:
+        class: AdminBundle\Admin\ArticlesAdmin
+        arguments: [~, AdminBundle\Entity\Articles, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Статьи }
+
+    admin.company:
+        class: AdminBundle\Admin\CompanyAdmin
+        arguments: [~, AdminBundle\Entity\Company, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Компании }
+
+    admin.order_glass:
+        class: AdminBundle\Admin\OrderGlassAdmin
+        arguments: [~, AdminBundle\Entity\OrderGlass, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Заказы }
+
+    admin.order_glass_status:
+        class: AdminBundle\Admin\OrderGlassStatusAdmin
+        arguments: [~, AdminBundle\Entity\OrderGlassStatus, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Статус }
+
+    admin.settings:
+        class: AdminBundle\Admin\SettingsAdmin
+        arguments: [~, AdminBundle\Entity\Settings, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Настройки }
+
+    admin.user:
+        class: AdminBundle\Admin\UserAdmin
+        arguments: [~, AdminBundle\Entity\User, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Пользователи }
+
+    admin.alcogol_categories:
+        class: AdminBundle\Admin\AlcogolCategoryAdmin
+        arguments: [~, AdminBundle\Entity\AlcogolCategory, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Категории алкоголя }

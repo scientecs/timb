@@ -16,6 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use AdminBundle\Entity\OrderGlass;
+use AdminBundle\Entity\AlcogolCategory;
 
 /**
  * Alcogol
@@ -64,6 +65,12 @@ class Alcogol
     private $urlImage;
 
     /**
+     * @ORM\ManyToMany(targetEntity="AlcogolCategory", inversedBy="alcogol")
+     * @ORM\JoinTable(name="alcogol_categories")
+     */
+    private $alcogolCategories;
+
+    /**
      * @ORM\ManyToMany(targetEntity="OrderGlass", mappedBy="alcogol")
      */
     protected $orders;
@@ -74,6 +81,7 @@ class Alcogol
     public function __construct()
     {
         $this->orders = new ArrayCollection();
+        $this->alcogolCategories = new ArrayCollection();
     }
 
     /**
@@ -183,6 +191,40 @@ class Alcogol
     }
 
     /**
+     * Add alcogolCategories
+     *
+     * @param AlcogolCategory $alcogolCategories
+     *
+     * @return Alcogol
+     */
+    public function addAlcogolCategory(AlcogolCategory $alcogolCategories)
+    {
+        $this->alcogolCategories[] = $alcogolCategories;
+
+        return $this;
+    }
+
+    /**
+     * Remove alcogolCategories
+     *
+     * @param AlcogolCategory $alcogolCategories
+     */
+    public function removeAlcogolCategory(AlcogolCategory $alcogolCategories)
+    {
+        $this->alcogolCategories->removeElement($alcogolCategories);
+    }
+
+    /**
+     * Get alcogolCategories
+     *
+     * @return Collection 
+     */
+    public function getAlcogolCategories()
+    {
+        return $this->alcogolCategories;
+    }
+
+    /**
      * Add orders
      *
      * @param OrderGlass $orders
@@ -209,7 +251,7 @@ class Alcogol
     /**
      * Get orders
      *
-     * @return Collection 
+     * @return Collection
      */
     public function getOrders()
     {
