@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Alcogol Entity
+ * Company Admin
  *
  * PHP version 5.3
  *
@@ -16,12 +16,11 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 /**
- * AlcogolAdmin
+ * CompanyAdmin
  */
-class AlcogolAdmin extends BaseAdmin
+class CompanyAdmin extends BaseAdmin
 {
 
     /**
@@ -34,23 +33,40 @@ class AlcogolAdmin extends BaseAdmin
                     'label' => 'Имя'
                         )
                 )
-                ->add('price', 'number', array(
-                    'label' => 'Цена'
+                ->add('skype', 'text', array(
+                    'label' => 'Skype'
                         )
                 )
-                ->add('description', 'text', array(
-                    'label' => 'Описание'
+                ->add('email', 'text', array(
+                    'label' => 'Email'
                         )
                 )
-                ->add('urlImage', 'text', array(
-                    'label' => 'Image URL'
+                ->add('phone', 'text', array(
+                    'label' => 'Телефон'
                         )
                 )
-                ->add('alcogolCategories', EntityType::class, array(
-                    'class' => 'AdminBundle:AlcogolCategory',
-                    'property' => 'name',
-                    'label' => 'Категория',
-                    'multiple' => true,
+                ->add('latitude', 'number', array(
+                    'label' => 'Широта'
+                        )
+                )
+                ->add('longitude', 'number', array(
+                    'label' => 'Долгота'
+                        )
+                )
+                ->add('address', 'text', array(
+                    'label' => 'Адресс'
+                        )
+                )
+                ->add('timeFrom', 'text', array(
+                    'label' => 'Начало рабочего дня'
+                        )
+                )
+                ->add('timeTo', 'text', array(
+                    'label' => 'Конец рабочего дня'
+                        )
+                )
+                ->add('iconUrl', 'text', array(
+                    'label' => 'Icon url'
                         )
         );
     }
@@ -77,12 +93,16 @@ class AlcogolAdmin extends BaseAdmin
                     'label' => 'Имя'
                         )
                 )
-                ->add('price', 'number', array(
-                    'label' => 'Цена'
+                ->add('email', 'text', array(
+                    'label' => 'Email'
                         )
                 )
-                ->add('description', 'text', array(
-                    'label' => 'Описание'
+                ->add('address', 'text', array(
+                    'label' => 'Адресс'
+                        )
+                )
+                ->add('phone', 'text', array(
+                    'label' => 'Телефон'
                         )
                 )
                 ->add('_action', 'actions', array(

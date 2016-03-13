@@ -9,3 +9,12 @@ sonata_admin:
                 label_catalogue:      AdminBundle
                 items:
                     - admin.alcogol
+                    - admin.alcogol_categories
+                    - admin.articles
+                    - admin.banks
+                    - admin.broken_glass
+                    - admin.company
+                    - admin.order_glass
+                    - admin.order_glass_status
+                    - admin.settings
+                    - admin.user

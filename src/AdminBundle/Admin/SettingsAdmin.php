@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Alcogol Entity
+ * Settings Admin
  *
  * PHP version 5.3
  *
@@ -16,12 +16,11 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 /**
- * AlcogolAdmin
+ * SettingsAdmin
  */
-class AlcogolAdmin extends BaseAdmin
+class SettingsAdmin extends BaseAdmin
 {
 
     /**
@@ -34,23 +33,12 @@ class AlcogolAdmin extends BaseAdmin
                     'label' => 'Имя'
                         )
                 )
-                ->add('price', 'number', array(
-                    'label' => 'Цена'
+                ->add('settingKey', 'text', array(
+                    'label' => 'Ключ'
                         )
                 )
-                ->add('description', 'text', array(
-                    'label' => 'Описание'
-                        )
-                )
-                ->add('urlImage', 'text', array(
-                    'label' => 'Image URL'
-                        )
-                )
-                ->add('alcogolCategories', EntityType::class, array(
-                    'class' => 'AdminBundle:AlcogolCategory',
-                    'property' => 'name',
-                    'label' => 'Категория',
-                    'multiple' => true,
+                ->add('value', 'text', array(
+                    'label' => 'Значение'
                         )
         );
     }
@@ -61,7 +49,7 @@ class AlcogolAdmin extends BaseAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-                ->add('name', '', array(
+                ->add('name', null, array(
                     'label' => 'Имя'
                         )
         );
@@ -77,12 +65,12 @@ class AlcogolAdmin extends BaseAdmin
                     'label' => 'Имя'
                         )
                 )
-                ->add('price', 'number', array(
-                    'label' => 'Цена'
+                ->add('settingKey', 'text', array(
+                    'label' => 'Ключ'
                         )
                 )
-                ->add('description', 'text', array(
-                    'label' => 'Описание'
+                ->add('value', 'text', array(
+                    'label' => 'Значение'
                         )
                 )
                 ->add('_action', 'actions', array(

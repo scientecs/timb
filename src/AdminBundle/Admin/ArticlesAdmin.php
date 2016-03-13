@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Alcogol Entity
+ * Articles Admin
  *
  * PHP version 5.3
  *
@@ -12,16 +12,14 @@
 
 namespace AdminBundle\Admin;
 
-use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 /**
- * AlcogolAdmin
+ * ArticlesAdmin
  */
-class AlcogolAdmin extends BaseAdmin
+class ArticlesAdmin extends BaseAdmin
 {
 
     /**
@@ -30,27 +28,20 @@ class AlcogolAdmin extends BaseAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-                ->add('name', 'text', array(
-                    'label' => 'Имя'
+                ->add('title', 'text', array(
+                    'label' => 'Заголовок'
                         )
                 )
-                ->add('price', 'number', array(
-                    'label' => 'Цена'
+                ->add('shortDescription', 'text', array(
+                    'label' => 'Краткое описание'
                         )
                 )
-                ->add('description', 'text', array(
-                    'label' => 'Описание'
+                ->add('publishedDate', 'date', array(
+                    'label' => 'Дата публикации'
                         )
                 )
                 ->add('urlImage', 'text', array(
                     'label' => 'Image URL'
-                        )
-                )
-                ->add('alcogolCategories', EntityType::class, array(
-                    'class' => 'AdminBundle:AlcogolCategory',
-                    'property' => 'name',
-                    'label' => 'Категория',
-                    'multiple' => true,
                         )
         );
     }
@@ -61,8 +52,8 @@ class AlcogolAdmin extends BaseAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-                ->add('name', '', array(
-                    'label' => 'Имя'
+                ->add('title', '', array(
+                    'label' => 'Заголовок'
                         )
         );
     }
@@ -73,16 +64,28 @@ class AlcogolAdmin extends BaseAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-                ->add('name', 'text', array(
-                    'label' => 'Имя'
+                ->add('title', 'text', array(
+                    'label' => 'Заголовок'
                         )
                 )
-                ->add('price', 'number', array(
-                    'label' => 'Цена'
+                ->add('shortDescription', 'text', array(
+                    'label' => 'Краткое описание'
                         )
                 )
                 ->add('description', 'text', array(
                     'label' => 'Описание'
+                        )
+                )
+                ->add('publishedDate', 'date', array(
+                    'label' => 'Дата публикации'
+                        )
+                )
+                ->add('slug', 'text', array(
+                    'label' => 'Slug'
+                        )
+                )
+                ->add('urlImage', 'text', array(
+                    'label' => 'Image URL'
                         )
                 )
                 ->add('_action', 'actions', array(
