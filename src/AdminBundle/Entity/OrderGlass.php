@@ -17,7 +17,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use AdminBundle\Entity\Alcogol;
 use AdminBundle\Entity\Banks;
-use AdminBundle\Entity\BrokenGlasses;
+use AdminBundle\Entity\BrokenGlass;
 use AdminBundle\Entity\OrderGlassStatus;
 use AdminBundle\Entity\Company;
 
@@ -124,9 +124,9 @@ class OrderGlass
     protected $banks;
 
     /**
-     * @ORM\ManyToMany(targetEntity="BrokenGlasses", inversedBy="orders")
+     * @ORM\ManyToMany(targetEntity="BrokenGlass", inversedBy="orders")
      */
-    protected $brokenGlasses;
+    protected $brokenGlass;
 
     /**
      * @ORM\ManyToOne(targetEntity="Company")
@@ -487,37 +487,37 @@ class OrderGlass
     }
 
     /**
-     * Add brokenGlasses
+     * Add brokenGlass
      *
-     * @param BrokenGlasses $brokenGlasses
+     * @param BrokenGlass $brokenGlass
      *
      * @return OrderGlass
      */
-    public function addBrokenGlass(BrokenGlasses $brokenGlasses)
+    public function addBrokenGlass(BrokenGlass $brokenGlass)
     {
-        $this->brokenGlasses[] = $brokenGlasses;
+        $this->brokenGlass[] = $brokenGlass;
 
         return $this;
     }
 
     /**
-     * Remove brokenGlasses
+     * Remove brokenGlass
      *
-     * @param BrokenGlasses $brokenGlasses
+     * @param BrokenGlass $brokenGlass
      */
-    public function removeBrokenGlass(BrokenGlasses $brokenGlasses)
+    public function removeBrokenGlass(BrokenGlass $brokenGlass)
     {
-        $this->brokenGlasses->removeElement($brokenGlasses);
+        $this->brokenGlass->removeElement($brokenGlass);
     }
 
     /**
-     * Get brokenGlasses
+     * Get brokenGlass
      *
      * @return Collection 
      */
-    public function getBrokenGlasses()
+    public function getBrokenGlass()
     {
-        return $this->brokenGlasses;
+        return $this->brokenGlass;
     }
 
     /**
