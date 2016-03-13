@@ -1,0 +1,11 @@
+sonata_admin:
+    title:      "Glass"
+    dashboard:
+        blocks:
+            - { position: left, type: sonata.admin.block.admin_list, settings: { groups: [services.group.context]} }
+        groups:
+            services.group.context:
+                label:                Сервисы
+                label_catalogue:      AdminBundle
+                items:
+                    - admin.alcogol
