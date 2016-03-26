@@ -13,7 +13,7 @@ header, footer {
 }
 
 body {
-    background-color: #12587B;
+    background-color: #D5CDEC;
     width: 100%;
     height: 100%;
     color: #333;
@@ -45,8 +45,7 @@ a:active {
 
 #header {
     height:90px;
-    border-bottom:  2px solid silver;
-    background: #9CA4A9;
+    background: #CBC9E4;
     width: 100%;
     float:left;
 }
@@ -61,6 +60,10 @@ header span {
     float: left;
     margin-left: 570px;
     margin-top: -90px;
+}
+
+.header-title {
+    color:#150E2C;
 }
 
 header span h2 {
@@ -80,7 +83,7 @@ header span h2 {
 #footer {
     border-top: 2px solid silver;
     margin-top: 10px;
-    background: #230E35;
+    background: #311B73;
     height: 100px;
     padding: 2px;
 }
@@ -89,7 +92,7 @@ footer span p {
     float: left;
     padding: 10px;
     margin-top: 25px;
-    color: #5eb5e0;
+    color: #978B8B;
 
 }
 

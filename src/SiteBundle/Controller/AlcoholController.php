@@ -6,16 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * Description of AlcoholController
- *
- * @author scientecs
  */
-class AlcoholController {
+class AlcoholController extends Controller {
 
     /**
      * Action for render homepage
-     * 
      */
-    public function alcoholAction() {
+    public function indexAction() {
 
         return $this->render('SiteBundle:Alcohol:alcohol.html.twig');
     }

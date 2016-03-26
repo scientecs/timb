@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Glass{% endblock %}</title>
+        <title >{% block title %}GlassWare{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-            {% stylesheets 'bundles/site/css/base.css' filter='cssrewrite' %}
+            {% stylesheets '../dist/css/lib.css' filter='cssrewrite' %}
             <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
             {% endstylesheets %}
         {% endblock %}
@@ -16,7 +16,7 @@
 
             <header id ="header">
                 {% block header %}
-                    <a href="{{ path('homepage') }}"><h1>Glass</h1></a>
+                    <a href="{{ path('homepage') }}" class="header-title"><h1>GlassWare</h1></a>
                 {% endblock %}
             </header>
             <div id="page-wrap">
@@ -29,15 +29,16 @@
                 {% block footer %}
                     <span> 
                         <p> Все права защищены &copy; 2016 by 
-                            <a href="https://freelancehunt.com/freelancer/scientecs.html#portfolio">Scientecs</a>
-                            All rights reserved.
+                            <a href="https://freelancehunt.com/freelancer/scientecs.html#portfolio">Scientecs.</a>
                         </p>
                     {% endblock%}
             </footer>
         {% endblock %}
     </body>
     {% block javascripts %}
-
+        {% javascripts '../dist/js/lib.js' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
     {% endblock %}
 
 </html>

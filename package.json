@@ -1,0 +1,22 @@
+{
+    "name": "scientecs",
+    "version": "0.0.1",
+    "description": "glassware",
+    "main": "index.js",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "glassware"
+    ],
+    "author": "Scientecs",
+    "license": "ISC",
+    "devDependencies": {
+        "grunt-contrib-concat": "^0.5.0",
+        "bower": "^1.3.9",
+        "grunt": "~0.4.5",
+        "grunt-cli": "^0.1.13",
+        "grunt-contrib-copy": "~0.7.0"
+    }
+}
