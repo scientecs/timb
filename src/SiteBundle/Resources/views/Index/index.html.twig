@@ -1,41 +1,35 @@
 {% extends "base.html.twig" %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    {% stylesheets 'bundles/site/css/index.css' filter='cssrewrite' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
-{% endblock %}
-
 {% block content %}
     <div class="content">
         <div class="main-center">
-            <ul class="center-link" >
-                <li >
-                    {% image '@SiteBundle/Resources/public/images/alcogol.jpg' %}
-                    <img height="100px" width="100px" src="{{ asset_url }}" alt="Example" />
-                    {% endimage %}
-                    <p>
-                        <a class="main-center-link">Алкоголь</a>
-                    </p>
-                </li>
-                <li>
-                    {% image '@SiteBundle/Resources/public/images/banks.jpg' %}
-                    <img height="100px" width="100px" src="{{ asset_url }}" alt="Example" />
-                    {% endimage %}
-                    <p>
-                        <a class="main-center-link">Банки</a>
-                    </p>
-                </li>
-                <li>
-                    {% image '@SiteBundle/Resources/public/images/broken_glass.jpg' %}
-                    <img height="100px" width="100px" src="{{ asset_url }}" alt="Example" />
-                    {% endimage %}
-                    <p>
-                        <a class="main-center-link">Битое стекло</a>
-                    </p>
-                </li>
-            </ul>
+            <table class="center-link" cellspacing="3" cellpadding="0" width ="280" align="center">
+                <tr class="tr">
+                    <td>
+                        {% image '@SiteBundle/Resources/public/images/alcogol.jpg' %}
+                        <a href="{{ path('alcohol') }}">
+                            <img height="100px" width="100px" src="{{ asset_url }}" alt="Example" />
+                        </a>
+                        {% endimage %}
+                    </td>
+                    <td>
+                        {% image '@SiteBundle/Resources/public/images/banks.jpg' %}
+                        <a href="javascript:void(0)">
+                            <img height="100px" width="100px" src="{{ asset_url }}" alt="Example" />
+                        </a>
+                        {% endimage %}
+                    </td>
+                </tr>
+                <tr class="tr">
+                    <td>
+                        {% image '@SiteBundle/Resources/public/images/broken_glass.jpg' %}
+                        <a href="javascript:void(0)">
+                            <img height="100px" width="100px" src="{{ asset_url }}" alt="Example" />
+                        </a>
+                        {% endimage %}
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,9 @@
+.content .main-center {
+    margin-left: 40%;
+    float: left;
+}
+
+.content .main-center .center-link{
+    border-collapse: separate;
+    border-spacing: 10px 25px;
+}
