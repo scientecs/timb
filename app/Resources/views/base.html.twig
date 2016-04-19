@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title >{% block title %}GlassWare{% endblock %}</title>
+        <title>{% block title %}GlassWare{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
             {% stylesheets '../dist/css/lib.css' filter='cssrewrite' %}
@@ -13,14 +13,13 @@
     </head>
     <body id ="body">
         {% block body %}
-
             <header id ="header">
                 {% block header %}
                     <a href="{{ path('homepage') }}" class="header-title"><h1>GlassWare</h1></a>
                 {% endblock %}
             </header>
             <div id="page-wrap">
-                <div id="content">
+                <div class="content">
                     {% block content %}
                     {% endblock %}
                 </div>
@@ -31,12 +30,15 @@
                         <p> Все права защищены &copy; 2016 by 
                             <a href="https://freelancehunt.com/freelancer/scientecs.html#portfolio">Scientecs.</a>
                         </p>
-                    {% endblock%}
+                    </span>
+                {% endblock %}
             </footer>
         {% endblock %}
     </body>
     {% block javascripts %}
-        {% javascripts '../dist/js/lib.js' %}
+        {% javascripts '../dist/js/lib.js'
+          '@SiteBundle/Resources/public/js/example.js'
+        %}
         <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
     {% endblock %}

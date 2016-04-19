@@ -15,12 +15,32 @@ namespace AdminBundle\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use SiteBundle\Handler\ArticlesHandler;
 
 /**
  * ArticlesAdmin
  */
 class ArticlesAdmin extends BaseAdmin
 {
+
+    /**
+     * handler
+     *
+     * @var ArticlesHandler
+     */
+    private $handler;
+
+    /**
+     * Set handler
+     *
+     * @param ArticlesHandler $handler
+     */
+    public function setHandler(ArticlesHandler $handler)
+    {
+        $this->handler = $handler;
+    }
 
     /**
      * {@inheritdoc}
@@ -32,16 +52,25 @@ class ArticlesAdmin extends BaseAdmin
                     'label' => 'Заголовок'
                         )
                 )
-                ->add('shortDescription', 'text', array(
+                ->add('shortDescription', TextareaType::class, array(
                     'label' => 'Краткое описание'
+                        )
+                )
+                ->add('description', TextareaType::class, array(
+                    'label' => 'Описание'
+                        )
+                )
+                ->add('slug', 'text', array(
+                    'label' => 'Slug'
                         )
                 )
                 ->add('publishedDate', 'date', array(
                     'label' => 'Дата публикации'
                         )
                 )
-                ->add('urlImage', 'text', array(
-                    'label' => 'Image URL'
+                ->add('file', FileType::class, array(
+                    'label' => 'Файл',
+                    'required' => false
                         )
         );
     }
@@ -84,10 +113,6 @@ class ArticlesAdmin extends BaseAdmin
                     'label' => 'Slug'
                         )
                 )
-                ->add('urlImage', 'text', array(
-                    'label' => 'Image URL'
-                        )
-                )
                 ->add('_action', 'actions', array(
                     'actions' => array(
                         'edit' => array(),
@@ -96,6 +121,40 @@ class ArticlesAdmin extends BaseAdmin
                     'label' => 'Действия'
                         )
         );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function create($object)
+    {
+        $object = parent::create($object);
+
+        $uniqueId = $this->request->query->get('uniqid');
+        $file = $this->request->files->get($uniqueId)['file'];
+
+        if (null !== $object->getFile()) {
+            $object = $this->handler->saveImage($object, $file);
+        }
+
+        return $object;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function update($object)
+    {
+        $object = parent::update($object);
+
+        $uniqueId = $this->request->query->get('uniqid');
+        $file = $this->request->files->get($uniqueId)['file'];
+
+        if (null !== $object->getFile()) {
+            $object = $this->handler->saveImage($object, $file);
+        }
+
+        return $object;
     }
 
 }

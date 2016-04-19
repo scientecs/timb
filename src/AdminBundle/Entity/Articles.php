@@ -71,9 +71,16 @@ class Articles
     /**
      * @var string
      * 
-     * @ORM\Column(name="url_image", type="string")
+     * @ORM\Column(name="url_image", type="string", nullable=true)
      */
     private $urlImage;
+
+    /**
+     * Image file (used for upload only)
+     *
+     * @var File
+     */
+    private $file;
 
     /**
      * Get id
@@ -227,6 +234,29 @@ class Articles
     public function getUrlImage()
     {
         return $this->urlImage;
+    }
+
+    /**
+     * Set uploaded file
+     *
+     * @param File $file
+     *
+     * @return Complexity
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+        return $this;
+    }
+
+    /**
+     * Get uploaded file
+     *
+     * @return File
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 
 }

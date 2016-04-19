@@ -5,3 +5,11 @@ homepage:
 alcohol:
     path:      /alcogol
     defaults:  { _controller: SiteBundle:Alcohol:index }
+
+articles:
+    path:      /articles
+    defaults: { _controller: SiteBundle:Articles:index }
+
+article_page:
+    path:      /article_page/{slug}
+    defaults: { _controller: SiteBundle:ArticlePage:index, slug:null }
