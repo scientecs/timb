@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="articles">
+        <div class="title-articles">{{ article.title }}</div>
+        <img height="200px" width="200px" src="{{ asset(article.urlImage) }}" alt="Example" />
+        <span class="articles-descr">
+            <p>{{ article.description }}</p>
+        </span>
+        <div class="date-more">
+            <div class="articles-publish-date">{{ article.publishedDate | date('Y/m/d') }}</div>
+        </div>
+    </div>
+{% endblock content %}

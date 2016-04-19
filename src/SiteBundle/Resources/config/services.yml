@@ -1,4 +1,15 @@
+parameters:
+
+    #handlers
+    articles_handler.class: SiteBundle\Handler\ArticlesHandler
+    articles_handler.entity.class: AdminBundle\Entity\Articles
+
 services:
-#    site.example:
-#        class: SiteBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+
+    #handlers
+    articles_handler:
+        class: %articles_handler.class%
+        arguments:
+            - %articles_handler.entity.class%
+            - "@doctrine.orm.entity_manager"
+            - "@kernel"

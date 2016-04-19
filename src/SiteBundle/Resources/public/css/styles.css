@@ -3,7 +3,39 @@
     float: left;
 }
 
-.content .main-center .center-link{
+.content .main-center .center-link {
     border-collapse: separate;
     border-spacing: 10px 25px;
+}
+
+.content .articles {
+    margin-top: 100px;
+    position: fixed;
+    right: 50%;
+    left: 35%;
+    float:left;
+}
+
+.content .title-articles {
+    float:left;
+    font-size: 2.0em;
+}
+
+.content .articles img {
+    float:left;
+}
+
+.content .articles-descr {
+    float:left;
+    width:500px;
+    margin-top: 15px;
+}
+.content .articles-publish-date {
+    float:left;
+}
+.content .date-more {
+    float:left;
+}
+.content .articles-more {
+
 }
