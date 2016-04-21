@@ -1,17 +1,23 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <div class="articles">
+    <div class="indent">
         {% for article in articles %}
-            <div class="title-articles">{{ article.title }}</div>
-            <img height="200px" width="200px" src="{{ asset(article.urlImage) }}" alt="Example" />
-            <span class="articles-descr">
-                <p>{{ article.shortDescription }}</p>
-            </span>
-            <div class="date-more">
-                <div class="articles-publish-date">{{ article.publishedDate | date('Y/m/d') }}</div>
-                <a class="articles-more" href="{{ path('article_page') }}/{{ article.slug }}">Читать далее...</a>
+            <div class="articles">
+                <div class="title-articles">{{ article.title }}</div>
+                <img height="200px" width="200px" src="{{ asset(article.urlImage) }}" alt="Example" />
+                <span>
+                    <p class="articles-descr">{{ article.shortDescription }}</p>
+                </span>
+                <div class="date-more">
+                    <span class="articles-publish-date">{{ article.publishedDate | date('Y/m/d') }}</span>
+                    <a class="articles-more" href="{{ path('article_page') }}/{{ article.slug }}">Читать далее...</a>
+                </div>
             </div>
         {% endfor %}
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(articles) }}
     </div>
 {% endblock content %}

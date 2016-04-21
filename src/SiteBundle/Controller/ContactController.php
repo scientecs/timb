@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Alcohol Controller
+ * Contact Controller
  *
  * PHP version 5.3
  *
- * @package    AdminBundle\Entity
+ * @package    SiteBundle\Controller
  * @author     Yevhen Hryshatkin <scientecs.dev@gmail.com>
  * @copyright  2015-2016 scientecs. All rights reserved.
  */
@@ -15,19 +15,17 @@ namespace SiteBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- * Description of IndexController
+ * ContactController
  */
-class IndexController extends Controller
+class ContactController extends Controller
 {
 
     /**
-     * Action for render homepage
-     * 
+     * Method for render contact page
      */
     public function indexAction()
     {
-
-        return $this->render('SiteBundle:Index:index.html.twig');
+        return $this->render('SiteBundle:Contact:contact.html.twig');
     }
 
 }
