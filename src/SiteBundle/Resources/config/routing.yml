@@ -7,9 +7,13 @@ alcohol:
     defaults:  { _controller: SiteBundle:Alcohol:index }
 
 articles:
-    path:      /articles
-    defaults: { _controller: SiteBundle:Articles:index }
+    path:      /articles/{page}
+    defaults: { _controller: SiteBundle:Articles:index, page:1 }
 
 article_page:
     path:      /article_page/{slug}
     defaults: { _controller: SiteBundle:ArticlePage:index, slug:null }
+
+contact:
+    path:     /contact
+    defaults: { _controller: SiteBundle:Contact:index }

@@ -44,11 +44,49 @@ a:active {
 }
 
 #header {
-    height:90px;
-    background: #CBC9E4;
+    height:125px;
+    background: url(../images/header.jpg) no-repeat;
     width: 100%;
     float:left;
+    background-size: cover;
 }
+
+#header ul {
+    width: 660px;
+    margin: 0 auto;
+    padding-left: 0;
+    list-style: none;
+    overflow: hidden;
+    margin-top:9px;
+}
+
+#header ul li {
+    float: left;
+    font-size: 1.5em;
+}
+
+#header ul li a {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    color: #FDFDFD;
+    padding: 0.5em 0;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    margin-left: 8px;
+    margin-top: 80px;
+    width:90px;
+    border-right: 2px solid #000;
+}
+
+#header ul li #first-li {
+    border-left: 2px solid #000;
+}
+
+#header ul li a:hover {
+    color: #000;
+}
+
 
 header a {
     padding-top: 20px;
@@ -80,10 +118,11 @@ header span h2 {
     float:left;
 }
 
+/* Footer */
 #footer {
     border-top: 2px solid silver;
     margin-top: 10px;
-    background: #311B73;
+    background: #434343;
     height: 100px;
     padding: 2px;
 }

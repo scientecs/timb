@@ -1,3 +1,8 @@
+.content,
+#page-wrap {
+    background-color: rgba(202, 202, 202, 0.37);
+}
+
 .content .main-center {
     margin-left: 40%;
     float: left;
@@ -9,33 +14,50 @@
 }
 
 .content .articles {
-    margin-top: 100px;
-    position: fixed;
-    right: 50%;
-    left: 35%;
-    float:left;
+    left: 30%;
+    position:relative;
 }
 
-.content .title-articles {
-    float:left;
-    font-size: 2.0em;
+.content .indent {
+    margin-top: 120px;
 }
 
-.content .articles img {
-    float:left;
+.articles .title-articles {
+    font-size: 2em;
+    margin-left: 11%;
 }
 
-.content .articles-descr {
-    float:left;
-    width:500px;
+.articles img {
+    margin-left: 8%;
     margin-top: 15px;
 }
-.content .articles-publish-date {
-    float:left;
-}
-.content .date-more {
-    float:left;
-}
-.content .articles-more {
 
+.articles .articles-descr {
+    width: 30%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.articles .date-more {
+
+}
+
+.articles .articles-publish-date {
+    color: #111;
+    font-size: 1.3em;
+}
+
+.articles .articles-more {
+    margin-left: 25%;
+    border: 1px solid #333; 
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #000;
+}
+
+.articles .articles-more:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    background: linear-gradient(to bottom, #fcfff4, #e9e9ce);
+    color: #a00;
 }
